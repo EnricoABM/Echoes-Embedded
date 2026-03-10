@@ -23,17 +23,17 @@ void EspWifiSTA::connect(WifiConnectDto connectCmd) {
 
 void EspWifiSTA::connectDHCP(WifiConnectDto connectCmd) {
   DBG("Connecting to WiFi [DHCP]:");
-  DBG(connectCmd.ssid);
+  DBG(connectCmd.ssid.c_str());
   WiFi.config(INADDR_NONE, INADDR_NONE, INADDR_NONE);
   connect(connectCmd.ssid, connectCmd.pass);
 }
 
 void EspWifiSTA::connectStatic(WifiConnectDto connectCmd) {
   DBG("Connecting to WiFi [Static]:");
-  DBG(connectCmd.ssid);
-  DBG("IP: " + connectCmd.ip);
-  DBG("Gateway: " + connectCmd.gateway);
-  DBG("Subnet: " + connectCmd.subnet);
+  DBG(connectCmd.ssid.c_str());
+  DBG("IP: " + String(connectCmd.ip.c_str()));
+  DBG("Gateway: " + String(connectCmd.gateway.c_str()));
+  DBG("Subnet: " + String(connectCmd.subnet.c_str()));
 
   IPAddress ipParsed, gatewayParsed, subnetParsed;
   IPAddress dns1(8, 8, 8, 8);

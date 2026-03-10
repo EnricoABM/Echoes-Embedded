@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="stylesheet" href="style.css">
+
+<title>Configuração do Echoes</title>
+</head>
+
+<body>
+
+<img src="icon.svg" alt="Echoes Icon">
+
+<main>
+<h1>Echoes setup</h1>
+<p>Selecione a rede Wi-fi</p>
+<div id="networks"></div>
+</main>
+
+<div id="wifi-modal">
+<form id="wifi-connect" method="POST">
+
+<h2 id="wifi-modal-name"></h2>
+
+<input type="hidden" name="ssid" id="wifi-modal-ssid">
+
+<label id="wifi-modal-password">
+<span>Senha</span>
+<input type="password" name="password" placeholder="Digite a senha do wifi">
+</label>
+
+<details>
+<summary>Opções avançadas (Opcional)</summary>
+
+<div id="content">
+
+<label id="wifi-ip">
+<span>IP</span>
+<input
+type="text"
+name="ip"
+inputmode="decimal"
+pattern="^(\d{1,3}\.){3}\d{1,3}$"
+placeholder="Digite um ip personalizado ao conectar">
+</label>
+
+<label id="wifi-gateway">
+<span>Gateway</span>
+<input
+type="text"
+name="gateway"
+inputmode="decimal"
+pattern="^(\d{1,3}\.){3}\d{1,3}$"
+placeholder="Digite o gateway">
+</label>
+
+<label id="wifi-subnet">
+<span>Subnet (Máscara)</span>
+<input
+type="text"
+name="subnet"
+inputmode="decimal"
+pattern="^(\d{1,3}\.){3}\d{1,3}$"
+placeholder="Digite a mascara de rede"
+value="255.255.255.0">
+</label>
+
+</div>
+</details>
+
+<p id="wifi-error"></p>
+
+<div id="wifi-modal-actions">
+<p id="wifi-modal-cancel">Cancelar</p>
+<button type="submit">Conectar</button>
+</div>
+
+</form>
+</div>
+
+<script src="bundle.js"></script>
+
+</body>
+</html>

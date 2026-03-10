@@ -1,3 +1,6 @@
 .pio
 compile_commands.json
 .cache
+web/node_modules
+web/dist
+data/
